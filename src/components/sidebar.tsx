@@ -31,16 +31,28 @@ export function SidebarButton({ title, icon, href }: SidebarButtonProps) {
   )
 }
 
-export function SidebarUserButton() {
+interface SidebarUserButtonProps {
+  href: string
+}
+
+export function SidebarUserButton({ href }: SidebarUserButtonProps) {
+  "use client"
+
+  const pathname = usePathname()
+
   return (
-    <Button variant="nav" className="h-[4.5rem] px-6 border-b">
-      <Avatar className="size-8">
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>Av</AvatarFallback>
-      </Avatar>
-      <span className="font-bold text-base flex-1 text-left">Username</span>
-      <Settings className="size-5" />
-    </Button>
+    <Link href={href}>
+      <Button variant="nav" className={cn("h-[4.5rem] px-6 border-b", {
+        "bg-accent/80 text-accent-foreground hover:bg-accent": pathname === href,
+      })}>
+        <Avatar className="size-8">
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>Av</AvatarFallback>
+        </Avatar>
+        <span className="font-bold text-base flex-1 text-left">Username</span>
+        <Settings className="size-5" />
+      </Button>
+    </Link>
   )
 }
 
@@ -48,7 +60,7 @@ export function Sidebar() {
   return (
     <aside className="bg-muted/40 w-full max-w-72 border-r">
       <div className="mb-12">
-        <SidebarUserButton />
+        <SidebarUserButton href="/profile/123" />
       </div>
       <nav>
         <ul>

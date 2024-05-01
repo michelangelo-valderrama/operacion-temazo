@@ -7,11 +7,11 @@ interface HomeBannerProps extends React.HTMLAttributes<HTMLElement> { }
 export function HomeBanner({ className }: HomeBannerProps) {
   return (
     <aside className={cn(
-      `rounded-md max-w-screen-lg mx-auto shadow-2xl shadow-[hsl(var(--page-color))]/15`,
+      `rounded-md max-w-[1000px] mx-auto shadow-2xl shadow-[hsl(var(--page-color))]/15`,
       className
     )}>
-      <div className="rounded-md flex gap-x-6 items-end bg-gradient-to-br from-[hsl(var(--page-color))] to-50% to-black p-2.5">
-        <div className={`size-52 rounded-md`}>
+      <div className="rounded-md flex gap-x-6 items-end bg-gradient-to-br from-[hsl(var(--page-color))] to-50% to-black p-3">
+        <div className="size-52 rounded-md">
           <Image src="/song-image.png" alt="Image" width="207" height="206" className="object-cover size-full rounded-md" />
         </div>
         <div className="flex flex-col pb-2">

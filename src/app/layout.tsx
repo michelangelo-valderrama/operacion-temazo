@@ -28,9 +28,8 @@ export default function RootLayout({
     <html lang="es" className="dark select-none">
       <body
         className={cn(
-          "min-h-screen bg-black font-sans antialiased",
-          fontSans.variable,
-          "flex"
+          "min-h-screen bg-black font-sans antialiased flex",
+          fontSans.variable
         )}
       >
         <Sidebar />

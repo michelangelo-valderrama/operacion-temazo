@@ -31,7 +31,7 @@ export function Content({
           </Button>
         </div>
       </header>
-      <main className="relative z-10">
+      <main className="relative z-10 px-8 pt-2">
         {children}
       </main>
       <div className="absolute top-0 left-0 w-full z-0 bg-gradient-to-b from-[hsl(var(--page-color))]/30 h-64" />
