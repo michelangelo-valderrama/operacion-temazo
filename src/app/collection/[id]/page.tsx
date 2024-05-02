@@ -1,16 +1,25 @@
-"use client"
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { editions } from "@/mocks/editions.mock"
 
-import { useEffect } from "react"
-import { usePageColorStore } from "@/providers/page-color.provider"
+export const metadata: Metadata = {
+  title: '404 - Página no encontrada',
+};
 
-export default function Page() {
-  const { updatePageColor } = usePageColorStore((state) => state)
+interface PageProps {
+  params: {
+    id: string
+  }
+}
 
-  useEffect(() => {
-    updatePageColor()
-  }, [])
+export default function Page({ params }: PageProps) {
+  const edition = editions.find(e => e.id === params.id)
+  if (!edition) notFound()
 
   return (
-    <h1>Collection</h1>
+    <div>
+      <h1>Collection</h1>
+      <h2>{edition?.edition} Edición</h2>
+    </div>
   )
 }

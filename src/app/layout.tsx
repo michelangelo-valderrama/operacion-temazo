@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { PageColorStoreProvider } from '@/providers/page-color.provider'
-import { Content } from "@/components/content";
-import { Nav } from "@/components/nav";
+import { MainLayout } from "@/components/main-layout";
 import "@/app/globals.css";
 
 const fontSans = FontSans({
@@ -32,12 +30,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Nav />
-        <PageColorStoreProvider>
-          <Content>
-            {children}
-          </Content>
-        </PageColorStoreProvider>
+        <MainLayout>
+          {children}
+        </MainLayout>
       </body>
     </html>
   );

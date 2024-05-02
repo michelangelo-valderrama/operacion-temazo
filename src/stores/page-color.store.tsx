@@ -11,7 +11,7 @@ interface PageColorActions {
 export type PageColorStore = PageColorState & PageColorActions
 
 export const defaultInitState: PageColorState = {
-  pageColor: '0 0% 40%',
+  pageColor: '',
 }
 
 export const initPageColorStore = (): PageColorState => {

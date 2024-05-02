@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, Heart, Search } from "lucide-react";
+import { Home, Heart, Search, User } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -43,6 +43,7 @@ export function Tabs() {
           <TabItem icon={<Home />} title="Inicio" href="/" />
           <TabItem icon={<Search />} title="Buscar" href="/search" />
           <TabItem icon={<Heart />} title="Favoritos" href="/favorites" />
+          <TabItem icon={<User />} title="Perfíl" href="/profile/123" />
         </div>
       </aside>
     </div>
