@@ -30,7 +30,7 @@ export function HomeBanner({ className }: HomeBannerProps) {
           <Image src="/song-image.png" alt="Image" width="207" height="206" className="object-cover size-full rounded-md" />
         </div>
         <div className="flex flex-col pb-2">
-          <section className="mb-4 lg:mb-6 flex flex-col gap-y-1">
+          <section className="mb-4 lg:mb-6 flex flex-col gap-y-1 truncate">
             <h2 className="uppercase font-bold *:block">
               <span className="text-xs sm:text-base md:text-lg lg:text-2xl">Ganador</span>
               <span className="sm:text-lg md:text-2xl lg:text-4xl">2ª edición 2024</span>
@@ -39,7 +39,7 @@ export function HomeBanner({ className }: HomeBannerProps) {
               Lorem ipsum · Dolor sit amet
             </p>
           </section>
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-2 sm:gap-x-4">
             <Link href="/track/123">
               <Button className="h-8 rounded-md px-3 sm:h-10 sm:px-4 sm:py-2 md:h-11 md:rounded-md md:px-8">Escuchar</Button>
             </Link>

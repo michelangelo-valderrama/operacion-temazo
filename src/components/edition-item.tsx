@@ -31,8 +31,8 @@ export function EditionItem({ date, duration, edition, id }: EditionItemProps) {
           />
         </div>
         <div className="px-2.5 pb-2 pt-3 relative">
-          <p className="text-lg font-bold group-hover:text-accent-foreground">{edition} Edición</p>
-          <p className="text-sm text-muted-foreground font-medium">
+          <p className="text-base md:text-lg font-bold group-hover:text-accent-foreground">{edition} Edición</p>
+          <p className="text-xs md:text-sm text-muted-foreground font-medium">
             {formattedDate}
             {' · '}
             {formattedDuration.hours}h {formattedDuration.minutes}min

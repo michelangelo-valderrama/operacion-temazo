@@ -1,10 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { editions } from "@/mocks/editions.mock"
 
 export const metadata: Metadata = {
-  title: '404 - Página no encontrada',
-};
+  title: 'Edición',
+  description: 'Edición de Operación Triunfo',
+}
 
 interface PageProps {
   params: {
