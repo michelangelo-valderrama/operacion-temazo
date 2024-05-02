@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { PageColorStoreProvider } from '@/providers/page-color.provider'
-import { Sidebar } from "@/components/sidebar";
 import { Content } from "@/components/content";
+import { Nav } from "@/components/nav";
 import "@/app/globals.css";
 
 const fontSans = FontSans({
@@ -28,11 +28,11 @@ export default function RootLayout({
     <html lang="es" className="dark select-none">
       <body
         className={cn(
-          "min-h-screen bg-black font-sans antialiased flex",
+          "min-h-svh font-sans antialiased flex",
           fontSans.variable
         )}
       >
-        <Sidebar />
+        <Nav />
         <PageColorStoreProvider>
           <Content>
             {children}

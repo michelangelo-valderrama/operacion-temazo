@@ -5,7 +5,7 @@ interface PageColorState {
 }
 
 interface PageColorActions {
-  updatePageColor: (color: string) => void
+  updatePageColor: (color?: string) => void
 }
 
 export type PageColorStore = PageColorState & PageColorActions
@@ -23,7 +23,7 @@ export const createPageColorStore = (
 ) => {
   return createStore<PageColorStore>()((set) => ({
     ...initState,
-    updatePageColor: (color) => set(() => ({ pageColor: color })),
+    updatePageColor: (color) => set(() => ({ pageColor: color ?? "" })),
   }))
 }
 

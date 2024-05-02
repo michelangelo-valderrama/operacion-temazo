@@ -15,10 +15,7 @@ interface SidebarButtonProps {
 }
 
 export function SidebarButton({ title, icon, href }: SidebarButtonProps) {
-  "use client"
-
   const pathname = usePathname()
-
   return (
     <Link href={href}>
       <Button variant="nav" className={cn("h-12 px-6", {
@@ -36,10 +33,7 @@ interface SidebarUserButtonProps {
 }
 
 export function SidebarUserButton({ href }: SidebarUserButtonProps) {
-  "use client"
-
   const pathname = usePathname()
-
   return (
     <Link href={href}>
       <Button variant="nav" className={cn("h-[4.5rem] px-6 border-b", {
@@ -58,7 +52,7 @@ export function SidebarUserButton({ href }: SidebarUserButtonProps) {
 
 export function Sidebar() {
   return (
-    <aside className="bg-muted/40 w-full max-w-72 border-r">
+    <aside className="bg-background min-w-72 w-72 border-r hidden sm:block">
       <div className="mb-12">
         <SidebarUserButton href="/profile/123" />
       </div>

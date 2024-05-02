@@ -11,6 +11,6 @@ export default function Page() {
   }, [])
 
   return (
-    <h1>Collection</h1>
+    <h1>Track</h1>
   )
 }
