@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { usePageColorStore } from "@/providers/page-color.provider";
 import { Button } from "@/components/ui/button";
@@ -10,17 +9,13 @@ export function Content({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const contentRef = useRef<HTMLDivElement>(null)
   const { pageColor } = usePageColorStore((state) => state)
 
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.setAttribute('style', `--page-color: ${pageColor};`)
-    }
-  }, [])
-
   return (
-    <div ref={contentRef} className="bg-background flex-1 relative">
+    <div
+      style={{ '--page-color': pageColor } as React.CSSProperties}
+      className="bg-background flex-1 relative"
+    >
       <header className="pt-4 pb-2 px-8 relative z-10">
         <div className="flex gap-x-2 *:rounded-full *:size-9">
           <Button size="icon" variant="ghost" className="bg-background/60 hover:bg-background">
