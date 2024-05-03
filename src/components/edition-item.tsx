@@ -1,26 +1,44 @@
+"use client"
+
 import Image from "next/image"
+import Link from "next/link"
 import { formatDateToLocal, formatDuration } from "@/lib/utils"
 import { PlayButton } from "@/components/play-button"
-import Link from "next/link"
+import { usePageColorStore } from "@/providers/page-color.provider"
 
 interface EditionItemProps {
   id: string
   edition: string
   date: string
-  duration: number
+  duration_ms: number
 }
 
-export function EditionItem({ date, duration, edition, id }: EditionItemProps) {
+export function EditionItem({ date, duration_ms, edition, id }: EditionItemProps) {
+  const { updatePageColor } = usePageColorStore((state) => state)
+
   const formattedDate = formatDateToLocal({
     dateStr: date, format: {
       day: 'numeric',
       month: 'short',
     }
   })
-  const formattedDuration = formatDuration(duration)
+
+  const formattedDuration = formatDuration(duration_ms)
+
+  const handleMouseEnter = () => {
+    updatePageColor("60 94% 55%")
+  }
+
+  const handleMouseLeave = () => {
+    updatePageColor()
+  }
 
   return (
-    <Link href={`/collection/${id}`}>
+    <Link
+      href={`/edition/${id}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
         className="flex flex-col bg-muted/60 hover:bg-accent rounded-lg transition group max-w-80 hover:cursor-pointer"
       >

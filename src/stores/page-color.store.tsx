@@ -1,4 +1,5 @@
 import { createStore } from 'zustand/vanilla'
+import { COLORS } from '@/config'
 
 interface PageColorState {
   pageColor: string
@@ -11,7 +12,7 @@ interface PageColorActions {
 export type PageColorStore = PageColorState & PageColorActions
 
 export const defaultInitState: PageColorState = {
-  pageColor: '',
+  pageColor: COLORS.defaultPageColor.hsl,
 }
 
 export const initPageColorStore = (): PageColorState => {
@@ -23,7 +24,7 @@ export const createPageColorStore = (
 ) => {
   return createStore<PageColorStore>()((set) => ({
     ...initState,
-    updatePageColor: (color) => set(() => ({ pageColor: color ?? "" })),
+    updatePageColor: (color) => set(() => ({ pageColor: color ?? defaultInitState.pageColor })),
   }))
 }
 

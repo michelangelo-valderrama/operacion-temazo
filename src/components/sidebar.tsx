@@ -7,6 +7,7 @@ import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { users } from "@/mocks/users.mock"
 
 interface SidebarButtonProps {
   title: string
@@ -34,16 +35,18 @@ interface SidebarUserButtonProps {
 
 export function SidebarUserButton({ href }: SidebarUserButtonProps) {
   const pathname = usePathname()
+  const user = users[0]
+
   return (
     <Link href={href}>
       <Button variant="nav" className={cn("h-[4.5rem] px-6 border-b", {
         "bg-accent/80 text-accent-foreground hover:bg-accent": pathname === href,
       })}>
         <Avatar className="size-8">
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>Av</AvatarFallback>
+          <AvatarImage src={user.avatar} />
+          <AvatarFallback>{user.username}</AvatarFallback>
         </Avatar>
-        <span className="font-bold text-base flex-1 text-left">Username</span>
+        <span className="font-bold text-base flex-1 text-left truncate">{user.username}</span>
         <Settings className="size-5" />
       </Button>
     </Link>

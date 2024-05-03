@@ -1,26 +1,31 @@
 "use client"
 
-import { useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { usePageColorStore } from "@/providers/page-color.provider";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 interface HomeBannerProps extends React.HTMLAttributes<HTMLElement> { }
 
 export function HomeBanner({ className }: HomeBannerProps) {
   const { updatePageColor } = usePageColorStore((state) => state)
 
-  useEffect(() => {
-    updatePageColor("0 0 50")
-  }, [])
+  const handleMouseEnter = () => {
+    updatePageColor("360 76% 60%")
+  }
+
+  const handleMouseLeave = () => {
+    updatePageColor()
+  }
 
   return (
-    <aside className={cn(
-      `rounded-md max-w-[1000px] mx-auto shadow-2xl shadow-[hsl(var(--page-color))]/15`,
-      className
-    )}>
+    <aside
+      style={{ '--page-color': '360 76% 60%' } as React.CSSProperties}
+      className={cn("rounded-md max-w-[1000px] mx-auto", className)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className={`
         rounded-md p-3
         flex gap-x-4 lg:gap-x-6 items-end
@@ -40,7 +45,7 @@ export function HomeBanner({ className }: HomeBannerProps) {
             </p>
           </section>
           <div className="flex gap-x-2 sm:gap-x-4">
-            <Link href="/track/123">
+            <Link href="/track/20">
               <Button className="h-8 rounded-md px-3 sm:h-10 sm:px-4 sm:py-2 md:h-11 md:rounded-md md:px-8">Escuchar</Button>
             </Link>
             <Button className="h-8 rounded-md px-3 sm:h-10 sm:px-4 sm:py-2 md:h-11 md:rounded-md md:px-8" variant="outline">Ver clip</Button>

@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   description: 'Edición de Operación Triunfo',
 }
 
-interface PageProps {
+interface Props {
   params: {
     id: string
   }
 }
 
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: Props) {
   const edition = editions.find(e => e.id === params.id)
   if (!edition) notFound()
 
   return (
     <div>
-      <h1>Collection</h1>
-      <h2>{edition?.edition} Edición</h2>
+      <h1>Edition</h1>
+      <h2>{edition.edition} Edición</h2>
     </div>
   )
 }

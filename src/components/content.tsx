@@ -1,7 +1,4 @@
-"use client"
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { usePageColorStore } from "@/providers/page-color.provider";
 import { Button } from "@/components/ui/button";
 
 export function Content({
@@ -9,10 +6,8 @@ export function Content({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { pageColor } = usePageColorStore((state) => state)
   return (
     <div
-      style={{ '--page-color': pageColor } as React.CSSProperties}
       className="bg-background flex-1 relative"
     >
       <header className="pt-4 pb-2 px-2 sm:px-4 xl:px-8 absolute top-0 left-0 z-20">
@@ -25,10 +20,9 @@ export function Content({
           </Button>
         </div>
       </header>
-      <main className="relative z-10 px-2 sm:px-4 xl:px-8 pt-16 size-full">
+      <main className="px-2 sm:px-4 xl:px-8 pt-16 size-full">
         {children}
       </main>
-      <div className="absolute top-0 left-0 w-full z-0 bg-gradient-to-b from-[hsl(var(--page-color))]/30 h-64" />
     </div>
   )
 }
