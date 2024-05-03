@@ -1,16 +1,26 @@
-export const editions = [
+import { Edition } from '@/types/editions'
+
+export const editions: Edition[] = [
 	{
 		id: '123123',
-		edition: '2ª',
-		date: '2024-04-27',
-		duration_ms: 11400000,
-		link_yt: 'https://imangelo.dev'
+		edition_number: '2ª',
+		release_date: '2024-04-27',
+		images: [],
+		color_hsl: '0 0% 50%',
+		video: {
+			yt_url: 'https://imangelo.dev',
+			duration_ms: 11400000
+		}
 	},
 	{
 		id: '321321',
-		edition: '1ª',
-		date: '2024-04-03',
-		duration_ms: 7800000,
-		link_yt: 'https://imangelo.dev'
+		edition_number: '1ª',
+		release_date: '2024-04-03',
+		images: [],
+		color_hsl: '0 0% 50%',
+		video: {
+			duration_ms: 7800000,
+			yt_url: 'https://imangelo.dev'
+		}
 	}
 ]

@@ -2,28 +2,25 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import type { Edition } from "@/types/editions"
 import { formatDateToLocal, formatDuration } from "@/lib/utils"
 import { PlayButton } from "@/components/play-button"
 import { usePageColorStore } from "@/providers/page-color.provider"
 
-interface EditionItemProps {
-  id: string
-  edition: string
-  date: string
-  duration_ms: number
-}
+type EditionItemProps = Edition
 
-export function EditionItem({ date, duration_ms, edition, id }: EditionItemProps) {
+export function EditionItem({ release_date, video, edition_number, id }: EditionItemProps) {
   const { updatePageColor } = usePageColorStore((state) => state)
 
   const formattedDate = formatDateToLocal({
-    dateStr: date, format: {
+    dateStr: release_date,
+    format: {
       day: 'numeric',
       month: 'short',
     }
   })
 
-  const formattedDuration = formatDuration(duration_ms)
+  const formattedDuration = formatDuration(video.duration_ms)
 
   const handleMouseEnter = () => {
     updatePageColor("60 94% 55%")
@@ -49,7 +46,7 @@ export function EditionItem({ date, duration_ms, edition, id }: EditionItemProps
           />
         </div>
         <div className="px-2.5 pb-2 pt-3 relative">
-          <p className="text-base md:text-lg font-bold group-hover:text-accent-foreground">{edition} Edición</p>
+          <p className="text-base md:text-lg font-bold group-hover:text-accent-foreground">{edition_number} Edición</p>
           <p className="text-xs md:text-sm text-muted-foreground font-medium">
             {formattedDate}
             {' · '}

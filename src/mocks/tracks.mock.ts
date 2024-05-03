@@ -1,57 +1,54 @@
-export const tracks = [
+import type { Track } from '@/types/tracks'
+
+export const tracks: Track[] = [
 	{
 		id: '20',
-		title: 'Amanecer',
-		artist_id: '10',
-		duration: 1000,
-		cover_img: 'https://i.ytimg.com/vi/0Xr5Zv2S4Y8/maxresdefault.jpg',
-		color_hex: '#000000',
+		name: 'Amanecer',
+		artists_id: ['10'],
+		duration_ms: 100000,
 		edition_id: '123123',
-		position: 1,
-		order: 2
+		track_position: 1,
+		track_number: 2,
+		is_playing: true
 	},
 	{
 		id: '21',
-		title: 'Amanecer',
-		artist_id: '11',
-		duration: 1000,
-		cover_img: 'https://i.ytimg.com/vi/0Xr5Zv2S4Y8/maxresdefault.jpg',
-		color_hex: '#000000',
+		name: 'Hotel California',
+		artists_id: ['11'],
+		duration_ms: 100000,
 		edition_id: '123123',
-		position: 3,
-		order: 3
+		track_position: 3,
+		track_number: 3,
+		is_playing: false
 	},
 	{
 		id: '22',
-		title: 'Amanecer',
-		artist_id: '12',
-		duration: 1000,
-		cover_img: 'https://i.ytimg.com/vi/0Xr5Zv2S4Y8/maxresdefault.jpg',
-		color_hex: '#000000',
+		name: 'Paint it black',
+		artists_id: ['12'],
+		duration_ms: 100000,
 		edition_id: '123123',
-		position: 2,
-		order: 1
+		track_position: 2,
+		track_number: 1,
+		is_playing: false
 	},
 	{
 		id: '23',
-		title: 'Amanecer',
-		artist_id: '13',
-		duration: 1000,
-		cover_img: 'https://i.ytimg.com/vi/0Xr5Zv2S4Y8/maxresdefault.jpg',
-		color_hex: '#000000',
+		name: 'Forever young',
+		artists_id: ['13'],
+		duration_ms: 100000,
 		edition_id: '321321',
-		position: 2,
-		order: 1
+		track_position: 2,
+		track_number: 1,
+		is_playing: false
 	},
 	{
 		id: '24',
-		title: 'Amanecer',
-		artist_id: '14',
-		duration: 1000,
-		cover_img: 'https://i.ytimg.com/vi/0Xr5Zv2S4Y8/maxresdefault.jpg',
-		color_hex: '#000000',
+		name: 'Sweet child o mine',
+		artists_id: ['14'],
+		duration_ms: 100000,
 		edition_id: '321321',
-		position: 1,
-		order: 2
+		track_position: 1,
+		track_number: 2,
+		is_playing: false
 	}
 ]
