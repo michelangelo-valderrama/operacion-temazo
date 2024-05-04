@@ -5,7 +5,13 @@ export const editions: Edition[] = [
 		id: '123123',
 		edition_number: '2ª',
 		release_date: '2024-04-27',
-		images: [],
+		images: [
+			{
+				url: 'https://unavatar.io/reddit.com',
+				width: 400,
+				height: 400
+			}
+		],
 		color_hsl: '0 0% 50%',
 		video: {
 			yt_url: 'https://imangelo.dev',
@@ -16,7 +22,13 @@ export const editions: Edition[] = [
 		id: '321321',
 		edition_number: '1ª',
 		release_date: '2024-04-03',
-		images: [],
+		images: [
+			{
+				url: 'https://unavatar.io/reddit.com',
+				width: 400,
+				height: 400
+			}
+		],
 		color_hsl: '0 0% 50%',
 		video: {
 			duration_ms: 7800000,

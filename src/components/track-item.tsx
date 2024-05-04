@@ -2,6 +2,7 @@ import { Heart, Play } from "@/components/icons"
 import { TrackWithArtists } from "@/types/tracks"
 import { cn, formatDuration } from "@/lib/utils"
 import { Button, ButtonProps } from "@/components/ui/button"
+import Image from "next/image"
 
 type TrackIconButtonProps = ButtonProps
 
@@ -17,9 +18,15 @@ function TrackIconButton({ className, children, ...props }: TrackIconButtonProps
   )
 }
 
-type TrackItemProps = TrackWithArtists
+type TrackItemProps = TrackWithArtists & {
+  edition_image: {
+    url: string
+    width: number
+    height: number
+  }
+}
 
-export function TrackItem({ name, artists, track_number, duration_ms, is_playing }: TrackItemProps) {
+export function TrackItem({ name, artists, track_number, duration_ms, is_playing, edition_image }: TrackItemProps) {
   const formattedDuration = formatDuration(duration_ms)
   const trackDuration = `${formattedDuration.minutes}:${`${formattedDuration.seconds}`.padStart(2, '0')}`
 
@@ -31,7 +38,9 @@ export function TrackItem({ name, artists, track_number, duration_ms, is_playing
           {track_number}
         </span>
       </TrackIconButton>
-      <div className="size-10 bg-muted rounded-sm" />
+      <div className="size-10 rounded-sm">
+        <Image src={edition_image.url} alt={`Edition cover of ${name}`} width={edition_image.width} height={edition_image.height}></Image>
+      </div>
       <div className="flex-1">
         <p className="font-medium">{name}</p>
         <p className="text-sm text-muted-foreground truncate">{artists.map(a => a.name).join(', ')}</p>
