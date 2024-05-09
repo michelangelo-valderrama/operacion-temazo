@@ -1,5 +1,5 @@
 import { editions } from "@/mocks/editions.mock"
-import { EditionItem } from "@/components/edition-item"
+import { EditionItem } from "./edition-item"
 
 export function Editions() {
   return (

@@ -1,5 +1,5 @@
 import { HomeBanner } from "@/components/home-banner";
-import { Editions } from "@/components/editions";
+import { Editions } from "@/components/edition/editions";
 
 export function HomePage() {
   return (<div className="size-full">

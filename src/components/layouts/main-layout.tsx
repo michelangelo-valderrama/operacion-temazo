@@ -1,4 +1,4 @@
-import { Nav } from "@/components/nav"
+import { Nav } from "@/components/nav/nav"
 import { Content } from "@/components/content"
 
 interface MainLayoutProps {
