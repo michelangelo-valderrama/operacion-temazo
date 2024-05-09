@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="es" className="dark select-none">
       <body
         className={cn(
-          "min-h-svh font-sans antialiased flex",
+          "font-sans antialiased overflow-hidden",
           fontSans.variable
         )}
       >

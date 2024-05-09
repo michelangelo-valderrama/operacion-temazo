@@ -55,7 +55,7 @@ export function SidebarUserButton({ href }: SidebarUserButtonProps) {
 
 export function Sidebar() {
   return (
-    <aside className="bg-background min-w-72 w-72 border-r hidden sm:block">
+    <aside className="bg-background min-w-64 lg:w-72 border-r hidden md:block">
       <div className="mb-12">
         <SidebarUserButton href="/profile/123" />
       </div>

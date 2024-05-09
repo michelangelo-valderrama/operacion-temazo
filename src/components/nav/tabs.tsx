@@ -34,7 +34,7 @@ function TabItem({ icon, title, href }: TabItemProps) {
 
 export function Tabs() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-20 sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-20 md:hidden">
       <aside className="bg-gradient-to-t from-background to-90% max-w-[100vw]">
         <div className={`
           flex items-center justify-evenly

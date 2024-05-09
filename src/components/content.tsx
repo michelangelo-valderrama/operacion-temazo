@@ -14,7 +14,7 @@ export function Content({
           {/* <HeaderButtons /> */}
         </div>
       </header>
-      <main className="px-2 sm:px-4 xl:px-8 pt-16 size-full">
+      <main className="px-2 sm:px-4 xl:px-8 pt-16 size-full overflow-hidden">
         {children}
       </main>
     </div>
