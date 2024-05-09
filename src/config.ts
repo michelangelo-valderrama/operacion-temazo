@@ -3,7 +3,7 @@ export const COLORS = {
 		hsl: '0 0% 4%',
 		hex: '#0A0A0A'
 	},
-	defaultPageColor: {
+	defaultAmbientColor: {
 		hsl: '0 0% 50%',
 		hex: '#808080'
 	}

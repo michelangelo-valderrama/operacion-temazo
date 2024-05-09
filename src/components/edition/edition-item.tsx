@@ -4,13 +4,13 @@ import Image from "next/image"
 import Link from "next/link"
 import type { Edition } from "@/types/editions"
 import { formatDateToLocal, formatDuration } from "@/lib/utils"
+import { useAmbientColor } from "@/stores/ambient-color.store"
 import { PlayButton } from "@/components/play-button"
-import { usePageColorStore } from "@/providers/page-color.provider"
 
 type EditionItemProps = Edition
 
 export function EditionItem({ release_date, video, edition_number, id }: EditionItemProps) {
-  const { updatePageColor } = usePageColorStore((state) => state)
+  const { setColor } = useAmbientColor((state) => state)
 
   const formattedDate = formatDateToLocal({
     dateStr: release_date,
@@ -23,11 +23,11 @@ export function EditionItem({ release_date, video, edition_number, id }: Edition
   const formattedDuration = formatDuration(video.duration_ms)
 
   const handleMouseEnter = () => {
-    updatePageColor("60 94% 55%")
+    setColor("60 94% 55%")
   }
 
   const handleMouseLeave = () => {
-    updatePageColor()
+    setColor()
   }
 
   return (

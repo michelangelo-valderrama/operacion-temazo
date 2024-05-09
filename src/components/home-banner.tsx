@@ -3,25 +3,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { usePageColorStore } from "@/providers/page-color.provider";
+import { useAmbientColor } from "@/stores/ambient-color.store";
 import { Button } from "@/components/ui/button";
 
 interface HomeBannerProps extends React.HTMLAttributes<HTMLElement> { }
 
 export function HomeBanner({ className }: HomeBannerProps) {
-  const { updatePageColor } = usePageColorStore((state) => state)
+  const { setColor } = useAmbientColor((state) => state)
 
   const handleMouseEnter = () => {
-    updatePageColor("360 76% 60%")
+    setColor("360 76% 60%")
   }
 
   const handleMouseLeave = () => {
-    updatePageColor()
+    setColor()
   }
 
   return (
     <aside
-      style={{ '--page-color': '360 76% 60%' } as React.CSSProperties}
+      style={{ '--ambient-color': '360 76% 60%' } as React.CSSProperties}
       className={cn("rounded-md max-w-[1000px] mx-auto", className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -29,7 +29,7 @@ export function HomeBanner({ className }: HomeBannerProps) {
       <div className={`
         rounded-md p-3
         flex gap-x-4 lg:gap-x-6 items-end
-        bg-gradient-to-br from-[hsl(var(--page-color))] to-50% to-black
+        bg-gradient-to-br from-[hsl(var(--ambient-color))] to-50% to-black
       `}>
         <div className="size-36 sm:size-40 lg:size-52 rounded-md">
           <Image src="/song-image.png" alt="Image" width="207" height="206" className="object-cover size-full rounded-md" />
