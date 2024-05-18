@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { cn, formatDurationToString, formatDuration } from "@/lib/utils"
-import { audio } from "@/scripts/player"
+// import { audio } from "@/scripts/player"
 import { MicVocal, Play, Repeat, Shuffle, SkipBack, SkipForward, Volume } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { PlayerSlider } from "./player-slider"
@@ -48,7 +48,7 @@ export function PlayerDesktop() {
     progressBar: [0],
   })
 
-  audio.addEventListener("loadeddata", () => {
+  /* audio.addEventListener("loadeddata", () => {
     setSongInfo({
       ...songInfo,
       currentTime: 0,
@@ -81,7 +81,7 @@ export function PlayerDesktop() {
   useEffect(() => {
     if (playing) audio.play()
     else audio.pause()
-  }, [playing])
+  }, [playing]) */
 
   const handleValueChangePercentage = (e: number[]) => {
     // setSongInfo({
@@ -95,13 +95,13 @@ export function PlayerDesktop() {
     setVolume(e)
   }
 
-  navigator.mediaSession.setActionHandler('play', () => {
+  /* navigator.mediaSession.setActionHandler('play', () => {
     setPlaying(true)
   });
 
   navigator.mediaSession.setActionHandler('pause', () => {
     setPlaying(false)
-  });
+  }); */
 
   return (
     <aside className="hidden border-t py-2 px-4 md:flex gap-x-4">
