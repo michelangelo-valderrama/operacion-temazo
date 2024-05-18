@@ -1,5 +1,6 @@
 import {
   PlayIcon,
+  PauseIcon,
   HeartIcon,
   SkipForwardIcon,
   SkipBackIcon,
@@ -13,8 +14,14 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-export function Play(props: LucideProps) {
-  return <PlayIcon className={props.className} fill="currentColor" {...props} />
+interface PlayProps extends LucideProps {
+  playing?: boolean
+}
+
+export function Play({ playing, ...props }: PlayProps) {
+  let Icon = PlayIcon
+  if (playing) Icon = PauseIcon
+  return <Icon className={props.className} fill="currentColor" {...props} />
 }
 
 export function Heart(props: LucideProps) {

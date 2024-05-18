@@ -9,7 +9,8 @@ export const tracks: Track[] = [
 		edition_id: '123123',
 		track_position: 1,
 		track_number: 2,
-		is_playing: true
+		is_playing: true,
+		audio: '/where-is-my-mind.mp3'
 	},
 	{
 		id: '21',
@@ -19,7 +20,8 @@ export const tracks: Track[] = [
 		edition_id: '123123',
 		track_position: 3,
 		track_number: 3,
-		is_playing: false
+		is_playing: false,
+		audio: '/prisma.mp3'
 	},
 	{
 		id: '22',
@@ -29,7 +31,8 @@ export const tracks: Track[] = [
 		edition_id: '123123',
 		track_position: 2,
 		track_number: 1,
-		is_playing: false
+		is_playing: false,
+		audio: '/where-is-my-mind.mp3'
 	},
 	{
 		id: '23',
@@ -39,7 +42,8 @@ export const tracks: Track[] = [
 		edition_id: '321321',
 		track_position: 2,
 		track_number: 1,
-		is_playing: false
+		is_playing: false,
+		audio: '/prisma.mp3'
 	},
 	{
 		id: '24',
@@ -49,6 +53,7 @@ export const tracks: Track[] = [
 		edition_id: '321321',
 		track_position: 1,
 		track_number: 2,
-		is_playing: false
+		is_playing: false,
+		audio: '/where-is-my-mind.mp3'
 	}
 ]

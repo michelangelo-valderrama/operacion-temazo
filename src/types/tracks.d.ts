@@ -8,7 +8,8 @@ export interface Track {
 	duration_ms: number
 	track_position: number
 	artists_id: string[]
-  is_playing: boolean
+	is_playing: boolean
+	audio: string
 }
 
 export interface TrackWithArtists extends Track {
